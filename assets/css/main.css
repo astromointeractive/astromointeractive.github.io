@@ -1,0 +1,401 @@
+/* Main CSS file for Astromo Interactive */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 221, 235, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 51, 102, 0.05) 0%, transparent 50%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 221, 235, 0.3);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 221, 235, 0.5);
+  }
+
+  /* Selection styles */
+  ::selection {
+    background-color: rgba(0, 221, 235, 0.2);
+    color: white;
+  }
+
+  ::-moz-selection {
+    background-color: rgba(0, 221, 235, 0.2);
+    color: white;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: #00ddeb;
+    color: #0a0a0f;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(0, 221, 235, 0.9);
+    transform: scale(1.05);
+  }
+
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #00ddeb;
+    color: #00ddeb;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #00ddeb;
+    color: #0a0a0f;
+    transform: scale(1.05);
+  }
+
+  .btn-accent {
+    padding: 0.75rem 1.5rem;
+    background-color: #ff3366;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+  }
+
+  .btn-accent:hover {
+    background-color: rgba(255, 51, 102, 0.9);
+    transform: scale(1.05);
+  }
+
+  .card {
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 30px rgba(0, 221, 235, 0.2);
+  }
+
+  .card-dark {
+    background: rgba(10, 10, 15, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-dark:hover {
+    box-shadow: 0 0 30px rgba(0, 221, 235, 0.2);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #00ddeb, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(to right, #ff3366, #00ddeb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .section-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .heading-xl {
+    font-size: 2.25rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 640px) {
+    .heading-xl {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-xl {
+      font-size: 3.75rem;
+    }
+  }
+
+  .heading-lg {
+    font-size: 1.875rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 640px) {
+    .heading-lg {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-lg {
+      font-size: 3rem;
+    }
+  }
+
+  .heading-md {
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 640px) {
+    .heading-md {
+      font-size: 1.875rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-md {
+      font-size: 2.25rem;
+    }
+  }
+
+  .heading-sm {
+    font-size: 1.25rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 640px) {
+    .heading-sm {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-sm {
+      font-size: 1.875rem;
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #00ddeb;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ddeb;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .game-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.3) 100%);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    transform: scale(1);
+  }
+
+  .game-card:hover {
+    border-color: rgba(0, 221, 235, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 221, 235, 0.2);
+  }
+
+  .blog-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.2) 100%);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    transform: scale(1);
+  }
+
+  .blog-card:hover {
+    border-color: rgba(0, 221, 235, 0.3);
+    transform: scale(1.02);
+  }
+
+  /* Particle container */
+  .particles-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Content overlay to ensure content stays above particles */
+  .content-overlay {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Loading animations */
+  .loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background: linear-gradient(to right, rgba(30, 41, 59, 0.5), rgba(51, 65, 85, 0.5));
+    border-radius: 0.25rem;
+  }
+
+  /* Image overlay effects */
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.8) 0%, transparent 50%, transparent 100%);
+  }
+
+  /* Focus styles for accessibility */
+  .focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #00ddeb, 0 0 0 4px #0a0a0f;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.3);
+  }
+
+  .bg-space-gradient {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  }
+
+  .bg-stars {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(45deg, transparent, rgba(0, 221, 235, 0.3), transparent) 1;
+  }
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
+  }
+
+  .shadow-glow-red {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+  }
+
+  .glass {
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(10, 10, 15, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark mode media query (for systems that prefer dark mode) */
+@media (prefers-color-scheme: dark) {
+  /* Our site is already dark, so no changes needed */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

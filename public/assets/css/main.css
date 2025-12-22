@@ -1,0 +1,201 @@
+/* Main CSS file for Astromo Interactive */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-space-950 text-white font-inter antialiased;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 221, 235, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 51, 102, 0.05) 0%, transparent 50%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-space-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-astromo-cyan/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-astromo-cyan/50;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-astromo-cyan/20 text-white;
+  }
+
+  ::-moz-selection {
+    @apply bg-astromo-cyan/20 text-white;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-astromo-cyan text-space-950 font-medium rounded-lg 
+           hover:bg-astromo-cyan/90 transform hover:scale-105 
+           transition-all duration-300 shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-astromo-cyan text-astromo-cyan 
+           font-medium rounded-lg hover:bg-astromo-cyan hover:text-space-950 
+           transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 bg-astromo-red text-white font-medium rounded-lg 
+           hover:bg-astromo-red/90 transform hover:scale-105 
+           transition-all duration-300 shadow-glow-red;
+  }
+
+  .card {
+    @apply glass rounded-xl p-6 hover:shadow-glow transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply glass-dark rounded-xl p-6 hover:shadow-glow transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-astromo-cyan to-white bg-clip-text text-transparent;
+  }
+
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-astromo-red to-astromo-cyan bg-clip-text text-transparent;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-orbitron font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-orbitron font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-orbitron font-semibold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-xl sm:text-2xl lg:text-3xl font-orbitron font-semibold tracking-tight;
+  }
+
+  .nav-link {
+    @apply text-white/70 hover:text-astromo-cyan transition-colors duration-300 
+           relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-0.5 after:bg-astromo-cyan after:transition-all 
+           after:duration-300 hover:after:w-full;
+  }
+
+  .game-card {
+    @apply group relative overflow-hidden rounded-xl bg-gradient-to-br 
+           from-space-900/50 to-space-800/30 backdrop-blur-sm border 
+           border-white/5 hover:border-astromo-cyan/30 transition-all 
+           duration-500 hover:transform hover:scale-105 hover:shadow-glow;
+  }
+
+  .blog-card {
+    @apply group relative overflow-hidden rounded-xl bg-gradient-to-br 
+           from-space-900/30 to-space-800/20 backdrop-blur-sm border 
+           border-white/5 hover:border-astromo-cyan/30 transition-all 
+           duration-500 hover:transform hover:scale-102;
+  }
+
+  /* Particle container */
+  .particles-container {
+    @apply fixed inset-0 pointer-events-none z-0;
+  }
+
+  /* Content overlay to ensure content stays above particles */
+  .content-overlay {
+    @apply relative z-10;
+  }
+
+  /* Loading animations */
+  .loading-pulse {
+    @apply animate-pulse bg-gradient-to-r from-space-800/50 to-space-700/50 rounded;
+  }
+
+  /* Image overlay effects */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-space-950/80 via-transparent to-transparent;
+  }
+
+  /* Focus styles for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-astromo-cyan focus:ring-offset-2 focus:ring-offset-space-950;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.3);
+  }
+
+  .bg-space-gradient {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  }
+
+  .bg-stars {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(45deg, transparent, rgba(0, 221, 235, 0.3), transparent) 1;
+  }
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark mode media query (for systems that prefer dark mode) */
+@media (prefers-color-scheme: dark) {
+  /* Our site is already dark, so no changes needed */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
