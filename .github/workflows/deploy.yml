@@ -35,13 +35,20 @@ jobs:
       - name: Build site
         run: npm run generate
       
+      - name: Debug output directory
+        run: |
+          echo "Contents of project root:"
+          ls -la
+          echo "Looking for output directories:"
+          find . -name "dist" -o -name ".output" -o -name "public" | head -10
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.output/public'
+          path: 'dist'
 
   deploy:
     environment:

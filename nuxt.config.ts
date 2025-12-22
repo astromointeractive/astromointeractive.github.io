@@ -11,7 +11,12 @@ export default defineNuxtConfig({
   },
   
   // Enable static generation
-  ssr: true,
+  ssr: false,
+  
+  // Output configuration for GitHub Pages
+  app: {
+    baseURL: '/astromointeractive.github.io/'
+  },
 
   // Modules
   modules: [
