@@ -3,19 +3,18 @@ export default defineNuxtConfig({
   // Compatibility
   compatibilityDate: '2025-07-15',
   
-  // Static site generation
+  // Static site generation for GitHub Pages
+  ssr: false,
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
+      routes: ['/sitemap.xml', '/games', '/blog', '/about'],
+      crawlLinks: true
     }
   },
   
-  // Enable static generation
-  ssr: false,
-  
-  // Output configuration for GitHub Pages
+  // GitHub Pages configuration
   app: {
-    baseURL: '/astromointeractive.github.io/'
+    baseURL: process.env.NODE_ENV === 'production' ? '/astromointeractive.github.io/' : '/'
   },
 
   // Modules
