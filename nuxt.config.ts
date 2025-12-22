@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/sitemap.xml', '/games', '/blog', '/about'],
       crawlLinks: true
+    },
+    output: {
+      dir: '.output',
+      publicDir: '.output/public'
     }
   },
   

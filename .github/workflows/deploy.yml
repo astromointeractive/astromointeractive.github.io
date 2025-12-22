@@ -43,10 +43,10 @@ jobs:
           ls -la
           echo "Contents of .output:"
           ls -la .output/ || echo ".output not found"
+          echo "Contents of .output/public:"
+          ls -la .output/public/ || echo ".output/public not found"
           echo "Contents of dist:"
           ls -la dist/ || echo "dist not found"
-          echo "Looking for generated files:"
-          find . -name "*.html" | head -5
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -54,7 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: '.output/public'
 
   deploy:
     environment:
