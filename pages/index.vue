@@ -7,7 +7,7 @@
           <!-- Studio Logo -->
           <div class="mb-8 flex justify-center">
             <div class="relative group">
-              <NuxtImg
+              <img
                 src="/assets/logo/astrologo.png"
                 alt="Astromo Interactive Logo"
                 width="120"

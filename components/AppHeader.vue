@@ -8,7 +8,7 @@
           class="flex items-center space-x-3 group hover:transform hover:scale-105 transition-all duration-300"
         >
           <div class="relative">
-            <NuxtImg
+            <img
               src="/assets/logo/astrologo.png"
               alt="Astromo Interactive Logo"
               width="48"

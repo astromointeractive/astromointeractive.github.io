@@ -5,7 +5,7 @@
         <!-- Company Info -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-3 mb-6">
-            <NuxtImg
+            <img
               src="/assets/logo/astrologo.png"
               alt="Astromo Interactive Logo"
               width="40"
