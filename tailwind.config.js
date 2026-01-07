@@ -28,8 +28,8 @@ export default {
         },
         // Astromo brand colors
         astromo: {
-          red: '#ff3366', // Rocket flame red
-          cyan: '#00ddeb', // Cool space blue/cyan
+          red: '#F64139', // Primary brand red
+          cyan: '#F64139', // Changed to red for consistency
           white: '#ffffff', // Pure white for contrast
           gray: {
             100: '#f7f8fc',

@@ -7,8 +7,9 @@ export default defineNuxtConfig({
   ssr: false,
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml', '/games', '/blog', '/about'],
-      crawlLinks: true
+      routes: ['/sitemap.xml', '/games', '/blog', '/about', '/privacy'],
+      crawlLinks: true,
+      failOnError: false
     },
     output: {
       dir: '.output',
@@ -18,7 +19,13 @@ export default defineNuxtConfig({
   
   // GitHub Pages configuration
   app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/astromointeractive.github.io/' : '/'
+    baseURL: '/',
+    buildAssetsDir: '/assets/'
+  },
+  
+  // Generate 404 fallback for SPA routing
+  generate: {
+    fallback: '404.html'
   },
 
   // Modules

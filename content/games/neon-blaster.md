@@ -2,7 +2,8 @@
 title: Neon Blaster
 status: testing
 featured: true
-thumbnail: /assets/logo/neon-blaster.jpg
+thumbnail: /assets/games/neonblaster/blastergame.jpg
+storeUrl: https://play.google.com/apps/testing/com.astromointeractive.neonblaster
 tags:
   - arcade
   - shooter

@@ -2,7 +2,8 @@
 title: Dig 4 Dinos
 status: testing
 featured: true
-thumbnail: /assets/logo/dig-4-dinos.jpg
+thumbnail: /assets/games/dig4dinos/diggame.jpg
+storeUrl: https://play.google.com/apps/testing/com.astromointeractive.dig4dinos
 tags:
   - simulation
   - mobile

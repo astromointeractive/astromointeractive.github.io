@@ -37,16 +37,31 @@ jobs:
         env:
           NODE_ENV: production
       
+      - name: Add .nojekyll file
+        run: touch .output/public/.nojekyll
+      
+      - name: Setup SPA routing for GitHub Pages
+        run: |
+          # Copy index.html to 404.html for SPA routing
+          cp .output/public/index.html .output/public/404.html
+          # Ensure all routes have their respective HTML files
+          mkdir -p .output/public/about
+          cp .output/public/index.html .output/public/about/index.html
+          mkdir -p .output/public/blog  
+          cp .output/public/index.html .output/public/blog/index.html
+          mkdir -p .output/public/games
+          cp .output/public/index.html .output/public/games/index.html
+          mkdir -p .output/public/privacy
+          cp .output/public/index.html .output/public/privacy/index.html
+      
       - name: Debug output directory
         run: |
           echo "Contents of project root:"
           ls -la
-          echo "Contents of .output:"
-          ls -la .output/ || echo ".output not found"
           echo "Contents of .output/public:"
           ls -la .output/public/ || echo ".output/public not found"
-          echo "Contents of dist:"
-          ls -la dist/ || echo "dist not found"
+          echo "First few HTML files:"
+          find .output/public -name "*.html" | head -5
       
       - name: Setup Pages
         uses: actions/configure-pages@v5

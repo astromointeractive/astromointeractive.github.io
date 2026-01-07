@@ -2,7 +2,7 @@
 title: Neon Dodge Dash
 status: released
 featured: true
-thumbnail: /assets/logo/neon-dodge-dash.jpg
+thumbnail: /assets/games/neondodgedash/neongame.jpg
 storeUrl: https://play.google.com/store/apps/details?id=com.astromo.neondodgedash
 tags:
   - arcade

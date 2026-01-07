@@ -2,11 +2,13 @@
 title: Starship Savior
 status: testing
 featured: true
-thumbnail: /assets/logo/starship-savior.jpg
+thumbnail: /assets/games/starshipsavior/starshipgame.jpg
+storeUrl: https://play.google.com/apps/testing/com.astromointeractive.starshipsavior
 tags:
-  - arcade
+  - action
+  - space
+  - rescue
   - shooter
-  - neon
 ---
 
 # Starship Savior - Neon Arcade Space Shooter

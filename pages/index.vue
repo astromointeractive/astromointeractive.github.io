@@ -43,23 +43,6 @@
               <Icon name="heroicons:users" class="inline ml-2 w-5 h-5" />
             </NuxtLink>
           </div>
-
-          <!-- Intro Video (if available) -->
-          <div class="relative max-w-4xl mx-auto animate-slide-up" v-if="showIntroVideo">
-            <div class="relative overflow-hidden rounded-2xl shadow-glow">
-              <video 
-                ref="introVideo"
-                class="w-full h-auto"
-                poster="/assets/logo/AstromoIntro.jpg"
-                controls
-                preload="metadata"
-              >
-                <source src="/assets/video/AstromoIntro.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="absolute inset-0 bg-gradient-to-t from-space-950/50 to-transparent pointer-events-none rounded-2xl"></div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -195,8 +178,7 @@ useHead({
 })
 
 // Reactive data
-const showIntroVideo = ref(true)
-const introVideo = ref<HTMLVideoElement>()
+// (removed intro video variables)
 
 // Fetch games data from content
 const { data: games } = await useAsyncData('games', () => queryContent('/games').find())

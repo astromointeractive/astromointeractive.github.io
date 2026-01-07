@@ -86,6 +86,14 @@
             <p class="text-white/70 mb-6">
               We couldn't find any games matching your current filter. Try selecting a different category.
             </p>
+            <!-- Debug info -->
+            <div class="text-left text-xs text-white/50 mb-4 bg-black/20 p-4 rounded">
+              <p>Debug Info:</p>
+              <p>Games loaded: {{ games?.length || 0 }}</p>
+              <p>Filter: {{ selectedFilter }}</p>
+              <p>Filtered games: {{ filteredGames.length }}</p>
+              <p v-if="games">Games: {{ games.map(g => g.title).join(', ') }}</p>
+            </div>
             <button 
               @click="selectedFilter = 'all'"
               class="btn-secondary"
@@ -138,7 +146,16 @@ useHead({
 })
 
 // Fetch games data
-const { data: games } = await useAsyncData('games', () => queryContent('/games').find())
+const { data: games } = await useAsyncData('games', async () => {
+  try {
+    const result = await queryContent('/games').find()
+    console.log('Games query result:', result)
+    return result
+  } catch (error) {
+    console.error('Error fetching games:', error)
+    return []
+  }
+})
 
 // Filter state
 const selectedFilter = ref('all')

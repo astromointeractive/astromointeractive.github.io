@@ -246,7 +246,7 @@ useHead({
 })
 
 // Fetch blog posts
-const { data: posts } = await queryContent('/blog').find()
+const { data: posts } = await useAsyncData('blog-posts', () => queryContent('/blog').find())
 
 // Reactive state
 const searchQuery = ref('')
