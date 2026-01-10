@@ -10,17 +10,13 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml', '/games', '/blog', '/about', '/privacy'],
       crawlLinks: true,
       failOnError: false
-    },
-    output: {
-      dir: '.output',
-      publicDir: '.output/public'
     }
   },
   
   // GitHub Pages configuration
   app: {
     baseURL: '/',
-    buildAssetsDir: '/assets/'
+    buildAssetsDir: '/_nuxt/'
   },
   
   // Generate 404 fallback for SPA routing
